@@ -1,12 +1,12 @@
-----------安装------------
-conda init cmd.exe
-conda env create -f environment.yaml
-conda activate ldm
-pip install opencv-python k_diffusion loguru gradio  pynvml omegaconf
-pytorch_lightning taming_transformers numba
+----------安装------------  
+conda init cmd.exe. 
+conda env create -f environment.yaml. 
+conda activate ldm. 
+pip install opencv-python k_diffusion loguru gradio  pynvml omegaconf. 
+pytorch_lightning taming_transformers numba.    
 
-错误替换目录
-F:\stable\stable-diffusion-webui\ldm\ldm\Lib\site-packages\taming\modules\vqvae
+错误替换目录.   
+F:\stable\stable-diffusion-webui\ldm\ldm\Lib\site-packages\taming\modules\vqvae      
 
 
 

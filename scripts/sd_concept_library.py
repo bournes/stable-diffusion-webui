@@ -1,6 +1,6 @@
-# This file is part of stable-diffusion-webui (https://github.com/sd-webui/stable-diffusion-webui/).
+# This file is part of sygil-webui (https://github.com/Sygil-Dev/sygil-webui/).
 
-# Copyright 2022 sd-webui team.
+# Copyright 2022 Sygil-Dev team.
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -14,17 +14,21 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # base webui import and utils.
-from sd_utils import *
+from sd_utils import st
 
 # streamlit imports
 import streamlit.components.v1 as components
+#other imports
+
+import os, math
+from PIL import Image
+
+# Temp imports
+#from basicsr.utils.registry import ARCH_REGISTRY
 
 
-class plugin_info():
-	plugname = "concept_library"
-	description = "Concept Library"
-	displayPriority = 4
-
+# end of imports
+#---------------------------------------------------------------------------------------------------------------
 
 # Init Vuejs component
 _component_func = components.declare_component(
@@ -238,7 +242,7 @@ def layout():
 			with st.container():
 				if downloaded_concepts_count == 0:
 					st.write("You don't have any concepts in your library ")
-					st.markdown("To add concepts to your library, download some from the [sd-concepts-library](https://github.com/sd-webui/sd-concepts-library) \
+					st.markdown("To add concepts to your library, download some from the [sd-concepts-library](https://github.com/Sygil-Dev/sd-concepts-library) \
 						repository and save the content of `sd-concepts-library` into ```./models/custom/sd-concepts-library``` or just create your own concepts :wink:.", unsafe_allow_html=False)
 				else:
 					if len(st.session_state["results"]) == 0:
